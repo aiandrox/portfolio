@@ -1,27 +1,27 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllWorkIds, getWorkData } from "../../lib/works";
 import Head from "next/head";
 import Date from "../../components/date";
 
-export default function Post({ postData }) {
+export default function Work({ workData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{workData.title}</title>
       </Head>
       <article>
-        <h1>{postData.title}</h1>
+        <h1>{workData.title}</h1>
         <div>
-          <Date dateString={postData.date} />
+          <Date dateString={workData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: workData.contentHtml }} />
       </article>
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = getAllWorkIds();
   return {
     paths,
     fallback: false,
@@ -29,10 +29,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const workData = await getWorkData(params.id);
   return {
     props: {
-      postData,
+      workData,
     },
   };
 }

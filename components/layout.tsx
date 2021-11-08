@@ -32,6 +32,7 @@ export default function Layout({ children, home }) {
               height={144}
               width={144}
               alt={name}
+              className="rounded-full w-28 mx-auto"
             />
             <h1>{name}</h1>
           </>

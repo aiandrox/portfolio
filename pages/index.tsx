@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedWorksData } from "../lib/works";
 import Link from "next/link";
 import Date from "../components/date";
 
-export default function Home({ allPostsData }) {
+export default function Home({ allWorksData }) {
   return (
     <Layout home>
       <Head>
@@ -20,9 +20,9 @@ export default function Home({ allPostsData }) {
       <section>
         <h2>Blog</h2>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {allWorksData.map(({ id, date, title }) => (
             <li key={id}>
-              <Link href={`/posts/${id}`}>
+              <Link href={`/works/${id}`}>
                 <a className="underline">{title}</a>
               </Link>
               <br />
@@ -38,10 +38,10 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allWorksData = getSortedWorksData();
   return {
     props: {
-      allPostsData,
+      allWorksData,
     },
   };
 }
