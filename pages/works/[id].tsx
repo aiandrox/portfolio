@@ -10,7 +10,9 @@ export default function Work({ workData }) {
         <title>{workData.title}</title>
       </Head>
       <article>
-        <h1>{workData.title}</h1>
+        <h1>
+          <a href={workData.url}>{workData.title}</a>
+        </h1>
         <div>
           <Date dateString={workData.date} />
         </div>

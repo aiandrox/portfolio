@@ -2,18 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-const name = "[Your Name]";
-export const siteTitle = "Next.js Sample Website";
+const name = "END";
+const description = "ポートフォリオサイト";
+export const siteTitle = "aiandrox.com";
 
 export default function Layout({ children, home }) {
   return (
     <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content={description} />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
