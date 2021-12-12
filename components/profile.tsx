@@ -1,7 +1,7 @@
 export default function Profile() {
   return (
     <div className="container max-w-5xl mx-auto m-8">
-      <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+      <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
         Profile
       </h1>
       <div className="w-full mb-4">
@@ -21,10 +21,13 @@ export default function Profile() {
         </div>
         <div className="w-full sm:w-1/2 p-6">
           <div>
-            <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+            <h3 className="text-3xl text-gray-800 font-bold leading-none">
               END
             </h3>
+            <p className="text-gray-500 text-sm mb-3">@aiandrox</p>
             <p className="text-gray-600">
+              岡山→山梨→東京
+              <br />
               2020年からエンジニアとして働いています。
               <br />
               業務では、主にRailsを書いています。

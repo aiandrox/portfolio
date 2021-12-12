@@ -3,6 +3,7 @@ import Layout, { siteTitle } from "../components/layout";
 import Profile from "../components/profile";
 import Header from "../components/header";
 import Link from "next/link";
+import anime from "animejs";
 
 export default function Home() {
   return (
@@ -10,26 +11,25 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="leading-normal tracking-normal text-white gradient">
+      <div className="leading-normal tracking-normal gradient text-gray-800">
         <Header></Header>
 
-        <div className="pt-24">
-          <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-            <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left py-6">
-              <p className="uppercase tracking-loose w-full">
-                What business are you?
-              </p>
-              <h1 className="my-4 text-5xl font-bold leading-tight">
-                Main Hero Message to sell yourself!
-              </h1>
-              <p className="leading-normal text-2xl mb-8">
-                Sub-hero message, not too long and not too short. Make it just
-                right!
-              </p>
-              <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Subscribe
-              </button>
-            </div>
+        <div className="pt-24 text-white">
+          <div
+            className="text-center md:text-left px-3 py-12 inline-block"
+            ref={(ref) => {
+              anime({
+                targets: ref,
+                translateX: 50,
+              });
+            }}
+          >
+            <h1 className="my-4 text-5xl font-bold leading-tight">
+              aiandrox.com
+            </h1>
+            <p className="tracking-loose w-full">
+              Web Developer END's portfolio site.
+            </p>
           </div>
         </div>
         <div className="relative -mt-12 lg:-mt-24">
@@ -70,8 +70,8 @@ export default function Home() {
         </section>
 
         <section className="bg-gray-100 py-8">
-          <div className="container mx-auto px-2 pt-4 pb-1 flex flex-wrap text-gray-800">
-            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          <div className="container mx-auto px-2 pt-4 pb-1 flex flex-wrap">
+            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
               Apps
             </h1>
             <div className="w-full mb-4">
@@ -103,33 +103,37 @@ export default function Home() {
 
         <section className="bg-white py-8">
           <div className="container mx-auto flex flex-wrap pt-4 pb-12">
-            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
               Works
             </h1>
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-            {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="w-full md:w-1/3 p-6 flex flex-col">
-                <Link href={`/works/200315_hikikomori`}>
-                  <a className="flex flex-wrap no-underline hover:no-underline">
-                    <div className="flex-1 bg-gray-50 rounded-t rounded-b-none overflow-hidden px-6 py-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                        alt=""
-                      />
 
-                      <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
-                        2021-12-1
+            <div className="pt-6">
+              {["株式会社サイトビジット", "株式会社資格スクエア"].map((n) => (
+                <div className="flex flex-row items-center before:content-['hello'] before:bg-blue-500 before:top-0 before:left-2 before:h-full before-w-2">
+                  <div className="h-full">
+                    <div className="h-10 w-10 rounded-full border"></div>
+                  </div>
+                  <div className="items-center">
+                    <p>2021-1</p>
+                    <div className="bg-indigo-600 h-2 w-px"></div>
+                    <p>2021-12</p>
+                  </div>
+                  <div className="shrink pl-6">
+                    <div className="">
+                      <h3 className="text-2xl font-bold leading-none mb-3 text-gray-800">
+                        {n}
+                      </h3>
+                      <p className="w-full text-gray-600 text-sm md:text-sm pb-4">
+                        システム開発グループ
                       </p>
-                      <div className="w-full font-bold text-xl text-gray-800">
-                        サービス名Abcde
-                      </div>
                     </div>
-                  </a>
-                </Link>
-              </div>
-            ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -165,7 +169,7 @@ export default function Home() {
           <div className="w-full mb-4">
             <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
-          <small className="my-4 text-xs leading-tight">
+          <small className="my-4 text-xs text-white leading-tight">
             Copyright © 2021-{new Date().getFullYear()} {siteTitle} All rights
             reserved.
           </small>
