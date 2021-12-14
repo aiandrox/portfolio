@@ -1,4 +1,6 @@
 import { siteTitle } from "../components/layout";
+import Link from "next/link";
+import { Link as Scroll } from "react-scroll";
 
 type headerProps = {
   isActive: boolean;
@@ -48,40 +50,50 @@ export default function Header({ isActive }: headerProps) {
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
             <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-black font-bold no-underline"
-                href="#"
+              <Scroll
+                to="profile"
+                smooth={true}
+                duration={600}
+                offset={-50}
+                className="inline-block py-2 px-4 text-black font-bold no-underline hover:text-gray-800 hover:cursor-pointer"
               >
-                Active
-              </a>
+                Profile
+              </Scroll>
             </li>
             <li className="mr-3">
-              <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                href="#"
+              <Scroll
+                to="apps"
+                smooth={true}
+                duration={600}
+                offset={-50}
+                className="inline-block py-2 px-4 text-black no-underline hover:text-gray-800 hover:cursor-pointer"
               >
-                link
-              </a>
+                Apps
+              </Scroll>
             </li>
             <li className="mr-3">
-              <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                href="#"
+              <Scroll
+                to="history"
+                smooth={true}
+                duration={600}
+                offset={-50}
+                className="inline-block py-2 px-4 text-black no-underline hover:text-gray-800 hover:cursor-pointer"
               >
-                link
-              </a>
+                History
+              </Scroll>
             </li>
           </ul>
-          <button
-            id="navAction"
-            className={
-              isActive
-                ? "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 gradient text-white"
-                : "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
-            }
-          >
-            Blog
-          </button>
+          <Link href="https://blog.aiandrox.com">
+            <div
+              className={
+                isActive
+                  ? "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 gradient text-white"
+                  : "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
+              }
+            >
+              Blog
+            </div>
+          </Link>
         </div>
       </div>
       <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
