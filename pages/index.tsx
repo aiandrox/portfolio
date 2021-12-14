@@ -12,7 +12,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <div className="leading-normal tracking-normal gradient text-gray-800">
-        <Header></Header>
+        <Header isActive={true}></Header>
 
         <div className="pt-24 text-white">
           <div
