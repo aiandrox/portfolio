@@ -9,10 +9,24 @@ type headerProps = {
 
 export default function Header({ isActive }: headerProps) {
   const [openedHeader, setOpenedHeader] = useState(false);
-
   const toggleOpenedHeader = () => {
     setOpenedHeader(!openedHeader);
   };
+
+  const menuItems = [
+    {
+      path: "profile",
+      label: "Profile",
+    },
+    {
+      path: "apps",
+      label: "Apps",
+    },
+    {
+      path: "history",
+      label: "History",
+    },
+  ];
 
   return (
     <nav
@@ -60,39 +74,22 @@ export default function Header({ isActive }: headerProps) {
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
-            <li className="mr-3">
-              <Scroll
-                to="profile"
-                smooth={true}
-                duration={600}
-                offset={-50}
-                className="inline-block py-2 px-4 text-black font-bold no-underline hover:text-gray-800 hover:cursor-pointer"
-              >
-                Profile
-              </Scroll>
-            </li>
-            <li className="mr-3">
-              <Scroll
-                to="apps"
-                smooth={true}
-                duration={600}
-                offset={-50}
-                className="inline-block py-2 px-4 text-black no-underline hover:text-gray-800 hover:cursor-pointer"
-              >
-                Apps
-              </Scroll>
-            </li>
-            <li className="mr-3">
-              <Scroll
-                to="history"
-                smooth={true}
-                duration={600}
-                offset={-50}
-                className="inline-block py-2 px-4 text-black no-underline hover:text-gray-800 hover:cursor-pointer"
-              >
-                History
-              </Scroll>
-            </li>
+            {menuItems.map(({ path, label }, i) => (
+              <li className="mr-3">
+                <Scroll
+                  key={i}
+                  to={path}
+                  smooth={true}
+                  spy={true}
+                  duration={600}
+                  offset={-50}
+                  className="inline-block py-2 px-4 text-black no-underline hover:text-gray-800 hover:cursor-pointer"
+                  activeClass="inline-block py-2 px-4 text-black font-bold no-underline hover:text-gray-800 hover:cursor-pointer"
+                >
+                  {label}
+                </Scroll>
+              </li>
+            ))}
           </ul>
           <Link href="https://blog.aiandrox.com">
             <div
