@@ -10,20 +10,20 @@ type App = {
   title: string;
 };
 
-const worksDirectory = path.join(process.cwd(), "works");
+const appsDirectory = path.join(process.cwd(), "apps");
 
-export function getSortedWorksData() {
-  // Get file names under /works
-  const fileNames = fs.readdirSync(worksDirectory);
-  const allWorksData = fileNames.map((fileName) => {
+export function getSortedAppsData() {
+  // Get file names under /apps
+  const fileNames = fs.readdirSync(appsDirectory);
+  const allAppsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
-    const fullPath = path.join(worksDirectory, fileName);
+    const fullPath = path.join(appsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the work metadata section
+    // Use gray-matter to parse the app metadata section
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
@@ -32,8 +32,8 @@ export function getSortedWorksData() {
       ...(matterResult.data as App),
     };
   });
-  // Sort works by date
-  return allWorksData.sort((a, b) => {
+  // Sort apps by date
+  return allAppsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -42,8 +42,8 @@ export function getSortedWorksData() {
   });
 }
 
-export function getAllWorkIds() {
-  const fileNames = fs.readdirSync(worksDirectory);
+export function getAllAppIds() {
+  const fileNames = fs.readdirSync(appsDirectory);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -53,11 +53,11 @@ export function getAllWorkIds() {
   });
 }
 
-export async function getWorkData(id: string) {
-  const fullPath = path.join(worksDirectory, `${id}.md`);
+export async function getAppData(id: string) {
+  const fullPath = path.join(appsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  // Use gray-matter to parse the work metadata section
+  // Use gray-matter to parse the app metadata section
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string

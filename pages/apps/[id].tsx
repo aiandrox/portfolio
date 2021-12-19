@@ -1,29 +1,29 @@
 import Layout from "../../components/layout";
-import { getAllWorkIds, getWorkData } from "../../lib/works";
+import { getAllAppIds, getAppData } from "../../lib/apps";
 import Head from "next/head";
 import Date from "../../components/date";
 
-export default function Work({ workData }) {
+export default function App({ appData }) {
   return (
     <Layout>
       <Head>
-        <title>{workData.title}</title>
+        <title>{appData.title}</title>
       </Head>
       <article>
         <h1>
-          <a href={workData.url}>{workData.title}</a>
+          <a href={appData.url}>{appData.title}</a>
         </h1>
         <div>
-          <Date dateString={workData.date} />
+          <Date dateString={appData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: workData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: appData.contentHtml }} />
       </article>
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = getAllWorkIds();
+  const paths = getAllAppIds();
   return {
     paths,
     fallback: false,
@@ -31,10 +31,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const workData = await getWorkData(params.id);
+  const appData = await getAppData(params.id);
   return {
     props: {
-      workData,
+      appData,
     },
   };
 }
