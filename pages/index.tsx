@@ -1,12 +1,13 @@
 import Head from "next/head";
+import { getSortedAppsData } from "../lib/apps";
 import Layout, { siteTitle } from "../components/layout";
+import Header from "../components/header";
 import Profile from "../components/index/profile";
 import Apps from "../components/index/apps";
 import Career from "../components/index/career";
-import Header from "../components/header";
 import Wave from "../components/index/wave";
 
-export default function Home() {
+export default function Home({ allAppsData }) {
   return (
     <Layout home>
       <Head>
@@ -30,7 +31,7 @@ export default function Home() {
         </section>
 
         <section id="apps" className="bg-gray-100 py-8">
-          <Apps></Apps>
+          <Apps allAppsData={allAppsData}></Apps>
         </section>
 
         <section id="career" className="bg-white py-8">
@@ -77,4 +78,13 @@ export default function Home() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const allAppsData = getSortedAppsData();
+  return {
+    props: {
+      allAppsData,
+    },
+  };
 }

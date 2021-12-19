@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Date from "../date";
 
-export default function Profile() {
+export default function Apps({ allAppsData }) {
   return (
     <div className="container mx-auto px-2 pt-4 pb-1 flex flex-wrap">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
@@ -9,9 +10,10 @@ export default function Profile() {
       <div className="w-full mb-4">
         <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
       </div>
-      {[1, 2, 3, 4].map((n) => (
-        <div key={n} className="w-full md:w-1/3 p-6 flex flex-col">
-          <Link href={`/works/hikikomori`}>
+
+      {allAppsData.map(({ id, date, title }) => (
+        <div key={id} className="w-full md:w-1/3 p-6 flex flex-col">
+          <Link href={`/apps/${id}`}>
             <a className="flex flex-wrap no-underline hover:no-underline">
               <div className="flex-1 overflow-hidden">
                 <img
@@ -20,10 +22,10 @@ export default function Profile() {
                 />
 
                 <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
-                  2021-12-1
+                  {date}
                 </p>
                 <div className="w-full font-bold text-xl text-gray-800">
-                  サービス名Abcde
+                  {title}
                 </div>
               </div>
             </a>
