@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import { getSortedAppsData } from "../lib/apps";
 import { getSortedCareersData } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
@@ -9,13 +10,36 @@ import Career from "../components/index/career";
 import Wave from "../components/index/wave";
 
 export default function Home({ allAppsData, allCareersData }) {
+  const [isHeightOver, setIsHeightOver] = useState(false);
+
+  useEffect(() => {
+    const scrollAction = () => {
+      const threshold = 150;
+      if (threshold > window.scrollY) {
+        setIsHeightOver(true);
+      } else {
+        setIsHeightOver(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollAction, {
+      capture: false,
+      passive: true,
+    });
+    scrollAction(); // 初期描画時に一度だけ判定する
+
+    return () => {
+      window.removeEventListener("scroll", scrollAction);
+    };
+  }, []);
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <div className="leading-normal tracking-normal gradient text-gray-800">
-        <Header isTop={true}></Header>
+        <Header isHeightOver={isHeightOver}></Header>
 
         <div className="pt-24 text-white">
           <div className="text-center md:text-left px-3 py-12 inline-block">

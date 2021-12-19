@@ -19,6 +19,7 @@ export default function Apps({ allAppsData }) {
                 <img
                   src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
                   alt=""
+                  className="rounded-lg shadow-lg"
                 />
 
                 <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
