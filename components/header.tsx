@@ -4,10 +4,10 @@ import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 
 type headerProps = {
-  isActive: boolean;
+  isTop: boolean;
 };
 
-export default function Header({ isActive }: headerProps) {
+export default function Header({ isTop }: headerProps) {
   const [openedHeader, setOpenedHeader] = useState(false);
   const toggleOpenedHeader = () => {
     setOpenedHeader(!openedHeader);
@@ -23,8 +23,8 @@ export default function Header({ isActive }: headerProps) {
       label: "Apps",
     },
     {
-      path: "history",
-      label: "History",
+      path: "career",
+      label: "Career",
     },
   ];
 
@@ -32,22 +32,19 @@ export default function Header({ isActive }: headerProps) {
     <nav
       id="header"
       className={
-        isActive
-          ? "fixed w-full z-30 top-0 text-black bg-white shadow"
-          : "fixed w-full z-30 top-0 text-white"
+        isTop
+          ? "fixed w-full z-30 top-0 text-white"
+          : "fixed w-full z-30 top-0 text-black bg-white shadow"
       }
     >
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
-          {isActive ? (
-            <a
-              className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-              href="#"
-            >
+          {isTop ? (
+            <></>
+          ) : (
+            <a className="no-underline hover:no-underline hover:cursor-pointer font-bold text-2xl lg:text-4xl">
               {siteTitle}
             </a>
-          ) : (
-            <></>
           )}
         </div>
         <div className="block lg:hidden pr-4">
@@ -94,9 +91,9 @@ export default function Header({ isActive }: headerProps) {
           <Link href="https://blog.aiandrox.com">
             <div
               className={
-                isActive
-                  ? "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 gradient text-white"
-                  : "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
+                isTop
+                  ? "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
+                  : "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 gradient text-white"
               }
             >
               Blog
