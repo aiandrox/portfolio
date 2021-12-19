@@ -2,7 +2,13 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import remark from "remark";
+import { unified } from "unified";
 import html from "remark-html";
+
+type App = {
+  date: string;
+  title: string;
+};
 
 const worksDirectory = path.join(process.cwd(), "works");
 
@@ -23,7 +29,7 @@ export function getSortedWorksData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as App),
     };
   });
   // Sort works by date
@@ -47,7 +53,7 @@ export function getAllWorkIds() {
   });
 }
 
-export async function getWorkData(id) {
+export async function getWorkData(id: string) {
   const fullPath = path.join(worksDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -55,15 +61,14 @@ export async function getWorkData(id) {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const processedContent = await unified().use(html);
+  // .process(matterResult.content);
+  // const contentHtml = processedContent.toString();
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
-    ...matterResult.data,
+    // contentHtml,
+    ...(matterResult.data as App),
   };
 }
