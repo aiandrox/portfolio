@@ -5,35 +5,36 @@ import remark from "remark";
 import { unified } from "unified";
 import html from "remark-html";
 
-type App = {
+type Career = {
   date: string;
   title: string;
+  description: string;
 };
 
-const appsDirectory = path.join(process.cwd(), "repositories/apps");
+const careersDirectory = path.join(process.cwd(), "repositories/careers");
 
-export function getSortedAppsData() {
-  // Get file names under /apps
-  const fileNames = fs.readdirSync(appsDirectory);
-  const allAppsData = fileNames.map((fileName) => {
+export function getSortedCareersData() {
+  // Get file names under /careers
+  const fileNames = fs.readdirSync(careersDirectory);
+  const allCareersData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
-    const fullPath = path.join(appsDirectory, fileName);
+    const fullPath = path.join(careersDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the app metadata section
+    // Use gray-matter to parse the career metadata section
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as App),
+      ...(matterResult.data as Career),
     };
   });
-  // Sort apps by date
-  return allAppsData.sort((a, b) => {
+  // Sort careers by date
+  return allCareersData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -42,8 +43,8 @@ export function getSortedAppsData() {
   });
 }
 
-export function getAllAppIds() {
-  const fileNames = fs.readdirSync(appsDirectory);
+export function getAllCareerIds() {
+  const fileNames = fs.readdirSync(careersDirectory);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -53,11 +54,11 @@ export function getAllAppIds() {
   });
 }
 
-export async function getAppData(id: string) {
-  const fullPath = path.join(appsDirectory, `${id}.md`);
+export async function getCareerData(id: string) {
+  const fullPath = path.join(careersDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  // Use gray-matter to parse the app metadata section
+  // Use gray-matter to parse the career metadata section
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
@@ -69,6 +70,6 @@ export async function getAppData(id: string) {
   return {
     id,
     // contentHtml,
-    ...(matterResult.data as App),
+    ...(matterResult.data as Career),
   };
 }

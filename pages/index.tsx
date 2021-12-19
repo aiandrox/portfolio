@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { getSortedAppsData } from "../lib/apps";
+import { getSortedCareersData } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
 import Header from "../components/header";
 import Profile from "../components/index/profile";
@@ -7,7 +8,7 @@ import Apps from "../components/index/apps";
 import Career from "../components/index/career";
 import Wave from "../components/index/wave";
 
-export default function Home({ allAppsData }) {
+export default function Home({ allAppsData, allCareersData }) {
   return (
     <Layout home>
       <Head>
@@ -35,7 +36,7 @@ export default function Home({ allAppsData }) {
         </section>
 
         <section id="career" className="bg-white py-8">
-          <Career></Career>
+          <Career allCareersData={allCareersData}></Career>
         </section>
 
         <svg className="wave-top" viewBox="0 0 1439 147" version="1.1">
@@ -82,9 +83,11 @@ export default function Home({ allAppsData }) {
 
 export async function getStaticProps() {
   const allAppsData = getSortedAppsData();
+  const allCareersData = getSortedCareersData();
   return {
     props: {
       allAppsData,
+      allCareersData,
     },
   };
 }
