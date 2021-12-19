@@ -1,6 +1,8 @@
+import { Camera } from "react-feather";
+
 export default function Career({ allCareersData }) {
   return (
-    <div className="container mx-auto flex flex-wrap pt-4 pb-12">
+    <div className="container mx-auto flex flex-wrap pt-4">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
         Career
       </h1>
@@ -13,7 +15,7 @@ export default function Career({ allCareersData }) {
           <div key={id} className="flex mb-12 md:mb-12">
             <div className="flex flex-col items-center">
               <div className="flex justify-center p-3 rounded-full align-center border-4 border-white bg-gray-500 bg-opacity-20">
-                <img src={`/svgs/${iconName}.svg`} />
+                <Camera size={16} />
               </div>
               <div className="flex-1 w-px -mb-12 bg-gray-200 md:-mb-12"></div>
             </div>
