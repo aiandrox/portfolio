@@ -1,46 +1,19 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
 import { getSortedAppsData } from "../lib/apps";
 import { getSortedCareersData } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
-import Header from "../components/header";
 import Profile from "../components/index/profile";
 import Apps from "../components/index/apps";
 import Career from "../components/index/career";
 import Wave from "../components/index/wave";
 
 export default function Home({ allAppsData, allCareersData }) {
-  const [isHeightOver, setIsHeightOver] = useState(false);
-
-  useEffect(() => {
-    const scrollAction = () => {
-      const threshold = 150;
-      if (threshold > window.scrollY) {
-        setIsHeightOver(true);
-      } else {
-        setIsHeightOver(false);
-      }
-    };
-
-    window.addEventListener("scroll", scrollAction, {
-      capture: false,
-      passive: true,
-    });
-    scrollAction(); // 初期描画時に一度だけ判定する
-
-    return () => {
-      window.removeEventListener("scroll", scrollAction);
-    };
-  }, []);
-
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <div className="leading-normal tracking-normal gradient text-gray-800">
-        <Header isHeightOver={isHeightOver}></Header>
-
         <div className="pt-24 text-white">
           <div className="text-center md:text-left px-3 py-12 inline-block">
             <h1 className="my-4 text-5xl font-bold leading-tight">
@@ -88,7 +61,7 @@ export default function Home({ allAppsData, allCareersData }) {
             </g>
           </g>
         </svg>
-        <section className="container mx-auto text-center py-6">
+        <footer className="container mx-auto text-center py-6">
           <h1 className="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
             Thank you for visiting.
           </h1>
@@ -99,7 +72,7 @@ export default function Home({ allAppsData, allCareersData }) {
             Copyright © 2021-{new Date().getFullYear()} {siteTitle} All rights
             reserved.
           </small>
-        </section>
+        </footer>
       </div>
     </Layout>
   );

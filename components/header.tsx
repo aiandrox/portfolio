@@ -29,14 +29,7 @@ export default function Header({ isHeightOver }: headerProps) {
   ];
 
   return (
-    <nav
-      id="header"
-      className={
-        isHeightOver
-          ? "fixed w-full z-30 top-0 text-white"
-          : "fixed w-full z-30 top-0 text-black bg-white shadow"
-      }
-    >
+    <div className={isHeightOver ? "text-white" : "text-black bg-white shadow"}>
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           {isHeightOver ? (
@@ -101,7 +94,6 @@ export default function Header({ isHeightOver }: headerProps) {
           </Link>
         </div>
       </div>
-      <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
-    </nav>
+    </div>
   );
 }

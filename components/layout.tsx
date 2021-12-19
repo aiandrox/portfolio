@@ -1,12 +1,36 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Header from "../components/header";
 
 const name = "END";
 const description = "ポートフォリオサイト";
 export const siteTitle = "aiandrox.com";
 
 export default function Layout({ children, home }) {
+  const [isHeightOver, setIsHeightOver] = useState(false);
+
+  useEffect(() => {
+    const scrollAction = () => {
+      const threshold = 150;
+      if (threshold > window.scrollY) {
+        setIsHeightOver(true);
+      } else {
+        setIsHeightOver(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollAction, {
+      capture: false,
+      passive: true,
+    });
+    scrollAction(); // 初期描画時に一度だけ判定する
+
+    return () => {
+      window.removeEventListener("scroll", scrollAction);
+    };
+  }, []);
+
   return (
     <div>
       <Head>
@@ -21,29 +45,8 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        {home ? (
-          <></>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2>
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+      <header className="fixed w-full z-30 top-0">
+        <Header isHeightOver={isHeightOver} />
       </header>
       <main>{children}</main>
       {!home && (
