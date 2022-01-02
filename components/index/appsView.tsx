@@ -12,24 +12,25 @@ const AppsView: NextPage<any> = ({ allAppsData }) => {
       </div>
 
       {allAppsData.map(({ id, date, title }) => (
-        <div key={id} className="w-full md:w-1/3 p-6 flex flex-col">
+        <div
+          key={id}
+          className="w-full md:w-1/3 flex flex-col no-underline hover:no-underline"
+        >
           <Link href={`/apps/${id}`}>
-            <a className="flex flex-wrap no-underline hover:no-underline">
-              <div className="flex-1 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                  alt=""
-                  className="rounded-lg shadow-lg"
-                />
+            <div className="flex-1 overflow-hidden p-6 hover:cursor-pointer">
+              <img
+                src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                alt=""
+                className="rounded-lg shadow-lg hover:shadow-none"
+              />
 
-                <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
-                  {date}
-                </p>
-                <div className="w-full font-bold text-xl text-gray-800">
-                  {title}
-                </div>
+              <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
+                {date}
+              </p>
+              <div className="w-full font-bold text-xl text-gray-800">
+                {title}
               </div>
-            </a>
+            </div>
           </Link>
         </div>
       ))}
