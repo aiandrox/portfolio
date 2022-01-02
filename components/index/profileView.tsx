@@ -1,4 +1,6 @@
-export default function Profile() {
+import { NextPage } from "next";
+
+const ProfileView: NextPage = () => {
   return (
     <div className="container max-w-5xl mx-auto m-8">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
@@ -40,4 +42,6 @@ export default function Profile() {
       </div>
     </div>
   );
-}
+};
+
+export default ProfileView;

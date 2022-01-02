@@ -1,5 +1,9 @@
-import '../styles/global.css'
+import { NextPage } from "next";
+import "../styles/global.css";
+import { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
+  return <Component {...pageProps} />;
+};
+
+export default App;

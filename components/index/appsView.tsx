@@ -1,7 +1,7 @@
+import { NextPage } from "next";
 import Link from "next/link";
-import Date from "../date";
 
-export default function Apps({ allAppsData }) {
+const AppsView: NextPage<any> = ({ allAppsData }) => {
   return (
     <div className="container mx-auto px-2 pt-4 pb-1 flex flex-wrap">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
@@ -35,4 +35,6 @@ export default function Apps({ allAppsData }) {
       ))}
     </div>
   );
-}
+};
+
+export default AppsView;

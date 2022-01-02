@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import anime from "animejs";
 
-export default function Wave() {
+const WaveView: NextPage = () => {
   return (
     <div className="relative -mt-12 lg:-mt-24">
       <svg viewBox="0 0 1428 174" version="1.1">
@@ -75,4 +76,6 @@ export default function Wave() {
       </svg>
     </div>
   );
-}
+};
+
+export default WaveView;

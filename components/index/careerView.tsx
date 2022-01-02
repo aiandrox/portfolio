@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import { Camera } from "react-feather";
 
-export default function Career({ allCareersData }) {
+const CareerView: NextPage<any> = ({ allCareersData }) => {
   return (
     <div className="container mx-auto flex flex-wrap pt-4">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
@@ -35,4 +36,6 @@ export default function Career({ allCareersData }) {
       </div>
     </div>
   );
-}
+};
+
+export default CareerView;

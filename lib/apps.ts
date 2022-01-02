@@ -5,7 +5,8 @@ import remark from "remark";
 import { unified } from "unified";
 import html from "remark-html";
 
-type App = {
+export type App = {
+  id: string;
   date: string;
   title: string;
 };

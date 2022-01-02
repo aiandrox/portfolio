@@ -1,13 +1,19 @@
+import { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import { getSortedAppsData } from "../lib/apps";
-import { getSortedCareersData } from "../lib/careers";
+import { getSortedAppsData, App } from "../lib/apps";
+import { getSortedCareersData, Career } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
-import Profile from "../components/index/profile";
-import Apps from "../components/index/apps";
-import Career from "../components/index/career";
-import Wave from "../components/index/wave";
+import ProfileView from "../components/index/profileView";
+import AppsView from "../components/index/appsView";
+import CareerView from "../components/index/careerView";
+import WaveView from "../components/index/waveView";
 
-export default function Home({ allAppsData, allCareersData }) {
+type Props = {
+  allAppsData: App[];
+  allCareersData: Career[];
+};
+
+const Home: NextPage<Props> = ({ allAppsData, allCareersData }: Props) => {
   return (
     <Layout home>
       <Head>
@@ -22,18 +28,18 @@ export default function Home({ allAppsData, allCareersData }) {
             <p className="tracking-loose w-full">Web Developer END's site.</p>
           </div>
         </div>
-        <Wave></Wave>
+        <WaveView></WaveView>
 
         <section id="profile" className="bg-white py-8">
-          <Profile></Profile>
+          <ProfileView></ProfileView>
         </section>
 
         <section id="apps" className="bg-gray-100 py-8">
-          <Apps allAppsData={allAppsData}></Apps>
+          <AppsView allAppsData={allAppsData}></AppsView>
         </section>
 
         <section id="career" className="bg-white py-8">
-          <Career allCareersData={allCareersData}></Career>
+          <CareerView allCareersData={allCareersData}></CareerView>
         </section>
 
         <svg className="wave-top" viewBox="0 0 1439 147" version="1.1">
@@ -76,9 +82,11 @@ export default function Home({ allAppsData, allCareersData }) {
       </div>
     </Layout>
   );
-}
+};
 
-export async function getStaticProps() {
+export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
   const allAppsData = getSortedAppsData();
   const allCareersData = getSortedCareersData();
   return {
@@ -87,4 +95,4 @@ export async function getStaticProps() {
       allCareersData,
     },
   };
-}
+};

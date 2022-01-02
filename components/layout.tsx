@@ -1,13 +1,19 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Header from "../components/header";
 
+type Props = {
+  children?: React.ReactNode;
+  home?: boolean;
+};
+
 const name = "END";
 const description = "ポートフォリオサイト";
 export const siteTitle = "aiandrox.com";
 
-export default function Layout({ children, home }) {
+const Layout: NextPage<Props> = ({ children, home }: Props) => {
   const [isHeightOver, setIsHeightOver] = useState(false);
 
   useEffect(() => {
@@ -58,4 +64,6 @@ export default function Layout({ children, home }) {
       )}
     </div>
   );
-}
+};
+
+export default Layout;

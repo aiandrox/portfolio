@@ -5,7 +5,8 @@ import remark from "remark";
 import { unified } from "unified";
 import html from "remark-html";
 
-type Career = {
+export type Career = {
+  id: string;
   date: string;
   title: string;
   description: string;

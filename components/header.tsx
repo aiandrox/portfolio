@@ -1,13 +1,14 @@
+import { NextPage } from "next";
 import { useState } from "react";
 import { siteTitle } from "../components/layout";
 import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 
-type headerProps = {
+type Props = {
   isHeightOver: boolean;
 };
 
-export default function Header({ isHeightOver }: headerProps) {
+const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
   const [openedHeader, setOpenedHeader] = useState(false);
   const toggleOpenedHeader = () => {
     setOpenedHeader(!openedHeader);
@@ -96,4 +97,6 @@ export default function Header({ isHeightOver }: headerProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Header;
