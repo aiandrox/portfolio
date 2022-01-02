@@ -20,8 +20,8 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
       label: "Profile",
     },
     {
-      path: "apps",
-      label: "Apps",
+      path: "works",
+      label: "Works",
     },
     {
       path: "career",

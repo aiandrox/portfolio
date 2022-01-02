@@ -1,23 +1,23 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
-const AppsView: NextPage<any> = ({ allAppsData }) => {
+const WorksView: NextPage<any> = ({ allWorksData }) => {
   return (
     <div className="container mx-auto px-2 pt-4 pb-1 flex flex-wrap">
       <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">
-        Apps
+        Works
       </h1>
       <div className="w-full mb-4">
         <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
       </div>
 
-      {allAppsData.map(({ id, date, title }) => (
+      {allWorksData.map(({ id, date, title }) => (
         <div
           key={id}
           className="w-full md:w-1/3 flex flex-col no-underline hover:no-underline"
         >
           <div className="flex-1 overflow-hidden p-6">
-            <Link href={`/apps/${id}`}>
+            <Link href={`/works/${id}`}>
               <div className="hover:cursor-pointer">
                 <img
                   src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
@@ -40,4 +40,4 @@ const AppsView: NextPage<any> = ({ allAppsData }) => {
   );
 };
 
-export default AppsView;
+export default WorksView;

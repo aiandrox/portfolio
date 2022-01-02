@@ -1,19 +1,19 @@
 import { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import { getSortedAppsData, App } from "../lib/apps";
+import { getSortedWorksData, Work } from "../lib/works";
 import { getSortedCareersData, Career } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
 import ProfileView from "../components/index/profileView";
-import AppsView from "../components/index/appsView";
+import WorksView from "../components/index/worksView";
 import CareerView from "../components/index/careerView";
 import WaveView from "../components/index/waveView";
 
 type Props = {
-  allAppsData: App[];
+  allWorksData: Work[];
   allCareersData: Career[];
 };
 
-const Home: NextPage<Props> = ({ allAppsData, allCareersData }: Props) => {
+const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
   return (
     <Layout home>
       <Head>
@@ -34,8 +34,8 @@ const Home: NextPage<Props> = ({ allAppsData, allCareersData }: Props) => {
           <ProfileView></ProfileView>
         </section>
 
-        <section id="apps" className="bg-gray-100 py-8">
-          <AppsView allAppsData={allAppsData}></AppsView>
+        <section id="works" className="bg-gray-100 py-8">
+          <WorksView allWorksData={allWorksData}></WorksView>
         </section>
 
         <section id="career" className="bg-white py-8">
@@ -87,11 +87,11 @@ const Home: NextPage<Props> = ({ allAppsData, allCareersData }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allAppsData = getSortedAppsData();
+  const allWorksData = getSortedWorksData();
   const allCareersData = getSortedCareersData();
   return {
     props: {
-      allAppsData,
+      allWorksData,
       allCareersData,
     },
   };
