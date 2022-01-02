@@ -65,10 +65,9 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center mr-3">
-            {menuItems.map(({ path, label }, i) => (
-              <li>
+            {menuItems.map(({ path, label }) => (
+              <li key={path}>
                 <Scroll
-                  key={i}
                   to={path}
                   smooth={true}
                   spy={true}
