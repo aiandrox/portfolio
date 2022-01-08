@@ -21,7 +21,7 @@ const ProfileView: NextPage = () => {
             />
           </div>
         </div>
-        <div className="w-full sm:w-1/2 p-6">
+        <div className="w-full sm:w-1/3 p-6">
           <div>
             <h3 className="text-3xl text-gray-800 font-bold leading-none">
               END
