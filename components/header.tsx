@@ -30,13 +30,19 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
   ];
 
   return (
-    <div className={isHeightOver ? "text-white" : "text-black bg-white shadow"}>
+    <div
+      className={
+        isHeightOver && !openedHeader
+          ? "text-white"
+          : "text-black bg-white shadow"
+      }
+    >
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           {isHeightOver ? (
             <></>
           ) : (
-            <a className="no-underline hover:no-underline hover:cursor-pointer font-bold text-2xl lg:text-4xl">
+            <a className="no-underline hover:no-underline hover:cursor-pointer font-bold text-2xl text-4xl md:block hidden">
               {siteTitle}
             </a>
           )}
@@ -44,7 +50,7 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
         <div className="block lg:hidden pr-4">
           <button
             onClick={toggleOpenedHeader}
-            className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            className="flex items-center p-1 text-pink-800 transform transition"
           >
             <svg
               className="fill-current h-6 w-6"
@@ -84,7 +90,7 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
           <Link href="https://blog.aiandrox.com">
             <div
               className={
-                isHeightOver
+                isHeightOver && !openedHeader
                   ? "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
                   : "mx-auto lg:mx-0 focus:outline-none focus:shadow-outline transform transition hover:scale-105 hover:cursor-pointer duration-300 ease-in-out font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 gradient text-white"
               }

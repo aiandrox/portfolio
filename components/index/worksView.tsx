@@ -16,7 +16,7 @@ const WorksView: NextPage<any> = ({ allWorksData }) => {
           key={id}
           className="w-full md:w-1/3 flex flex-col no-underline hover:no-underline"
         >
-          <div className="flex-1 overflow-hidden p-6">
+          <div className="flex-1 overflow-hidden px-3 md:px-6 py-6">
             <a href={url} target="_blank">
               <div className="hover:cursor-pointer">
                 <img
