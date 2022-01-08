@@ -7,11 +7,9 @@ technologies:
   - Ruby on Rails
   - Hotwire
   - Tailwind
-media:
-  - title: RUNTEQ生で共同開発。開発技術を検索できるサービス共有サイト「Fledge Hub」提供開始｜株式会社スタートアップテクノロジーのプレスリリース
-    url: https://prtimes.jp/main/html/rd/p/000000016.000057664.html
-  - title: 駆け出しエンジニアの「ポートフォリオどうしよう？」を解決するサービスをリリースしました - Qiita
-    url: https://qiita.com/aiandrox/items/20973aa7f65662579105
 ---
 
 個人開発者のための 技術を検索できる開発サービス投稿サイト
+
+- [RUNTEQ生で共同開発。開発技術を検索できるサービス共有サイト「Fledge Hub」提供開始｜株式会社スタートアップテクノロジーのプレスリリース](https://prtimes.jp/main/html/rd/p/000000016.000057664.html)
+- [駆け出しエンジニアの「ポートフォリオどうしよう？」を解決するサービスをリリースしました - Qiita](https://qiita.com/aiandrox/items/20973aa7f65662579105)

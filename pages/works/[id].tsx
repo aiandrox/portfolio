@@ -19,15 +19,6 @@ export default function Work({ workData }) {
         {workData.technologies.map((technology) => (
           <div>{technology}</div>
         ))}
-        <ul>
-          {workData.media.map(({ title, url }) => (
-            <li>
-              <a href={url} target="_blank">
-                {title}
-              </a>
-            </li>
-          ))}
-        </ul>
         <div dangerouslySetInnerHTML={{ __html: workData.contentHtml }} />
       </article>
     </Layout>
