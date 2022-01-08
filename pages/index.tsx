@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
       </Head>
       <div className="leading-normal tracking-normal gradient text-gray-800">
         <div className="pt-24 text-white">
-          <div className="text-center md:text-left px-3 py-12 inline-block">
+          <div className="w-full text-center md:text-left md:pl-20 px-3 py-12 inline-block">
             <h1 className="my-4 text-5xl font-bold leading-tight">
               aiandrox.com
             </h1>
@@ -75,7 +75,7 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
             <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
           <small className="my-4 text-xs text-white leading-tight">
-            Copyright © 2021-{new Date().getFullYear()} {siteTitle} All rights
+            Copyright © 2022-{new Date().getFullYear()} {siteTitle} All rights
             reserved.
           </small>
         </footer>

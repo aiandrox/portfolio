@@ -11,17 +11,17 @@ const WorksView: NextPage<any> = ({ allWorksData }) => {
         <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
       </div>
 
-      {allWorksData.map(({ id, date, title }) => (
+      {allWorksData.map(({ id, date, title, url }) => (
         <div
           key={id}
           className="w-full md:w-1/3 flex flex-col no-underline hover:no-underline"
         >
           <div className="flex-1 overflow-hidden p-6">
-            <Link href={`/works/${id}`}>
+            <a href={url} target="_blank">
               <div className="hover:cursor-pointer">
                 <img
-                  src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                  alt=""
+                  src={`/images/works/${id}.png`}
+                  alt={title}
                   className="rounded-lg shadow-lg hover:shadow-none"
                 />
 
@@ -32,7 +32,7 @@ const WorksView: NextPage<any> = ({ allWorksData }) => {
                   {title}
                 </div>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       ))}
