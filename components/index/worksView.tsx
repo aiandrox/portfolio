@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Link from "next/link";
+import WorkModal from "./workModal";
 
 const WorksView: NextPage<any> = ({ allWorksData }) => {
   return (
@@ -36,6 +36,7 @@ const WorksView: NextPage<any> = ({ allWorksData }) => {
           </div>
         </div>
       ))}
+      <WorkModal viewed={true}></WorkModal>
     </div>
   );
 };
