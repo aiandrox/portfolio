@@ -9,6 +9,9 @@ export type Work = {
   id: string;
   date: string;
   title: string;
+  url: string;
+  repo_url: string;
+  technologies: string[];
 };
 
 const worksDirectory = path.join(process.cwd(), "repositories/works");

@@ -51,7 +51,7 @@ const Layout: NextPage<Props> = ({ children, home }: Props) => {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className="fixed w-full z-30 top-0">
+      <header className="fixed w-full z-10 top-0">
         <Header isHeightOver={isHeightOver} />
       </header>
       <main>{children}</main>
