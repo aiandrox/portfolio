@@ -26,7 +26,6 @@ export function getSortedWorksData() {
     // Read markdown file as string
     const fullPath = path.join(worksDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-
     // Use gray-matter to parse the work metadata section
     const matterResult = matter(fileContents);
 
