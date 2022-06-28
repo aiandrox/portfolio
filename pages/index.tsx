@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import { getSortedWorksData, Work } from "../lib/works";
+import { getSortedWorksData, sortWorks, Work } from "../lib/works";
 import { getSortedCareersData, Career } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
 import ProfileView from "../components/index/profileView";
@@ -87,11 +87,11 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allWorksData = await Promise.all(getSortedWorksData());
+  const works = await Promise.all(getSortedWorksData());
   const allCareersData = getSortedCareersData();
   return {
     props: {
-      allWorksData,
+      allWorksData: sortWorks(works),
       allCareersData,
     },
   };

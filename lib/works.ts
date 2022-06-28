@@ -42,14 +42,16 @@ export const getSortedWorksData = () => {
       ...(matterResult.data as Work),
     };
   });
-  return allWorksData;
 
-  // Sort works by date
-  // return allWorksData.sort((a, b) => {
-  //   if (a.date < b.date) {
-  //     return 1;
-  //   } else {
-  //     return -1;
-  //   }
-  // });
+  return allWorksData;
+};
+
+export const sortWorks = (works: Work[]) => {
+  return works.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 };
