@@ -36,23 +36,21 @@ const WorksModal: NextPage<any> = ({
                   <ul className="flex space-x-1">
                     {work.technologies.map((technologyName) => {
                       return (
-                        <li className="relative w-fit h-fit px-2 py-0 text-xs border rounded-full bg-gray-50">
+                        <li
+                          key={technologyName}
+                          className="relative w-fit h-fit px-2 py-0 text-xs border rounded-full bg-gray-50"
+                        >
                           {technologyName}
                         </li>
                       );
                     })}
                   </ul>
                 )}
-                <div className="text-gray-600">
-                  {/* <p>
-                    ハッシュタグを登録するだけで継続を可視化できる、Twitter連携型
-                    学習記録サービスです。
-                  </p>
-                  <p>
-                    ハッシュタグを登録するだけで継続を可視化できる、Twitter連携型
-                    学習記録サービスです。
-                  </p> */}
-                </div>
+
+                <div
+                  className="text-gray-600"
+                  dangerouslySetInnerHTML={{ __html: work.contentHtml }}
+                />
               </div>
 
               <div className="bg-gray-100 px-4 py-3">

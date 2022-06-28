@@ -87,7 +87,7 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allWorksData = getSortedWorksData();
+  const allWorksData = await Promise.all(getSortedWorksData());
   const allCareersData = getSortedCareersData();
   return {
     props: {
