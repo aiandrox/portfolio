@@ -8,6 +8,7 @@ technologies:
 ---
 
 家で一日を過ごす育成ゲームのような何かです。
+
 Vue.jsを勉強しているときに思い立って作成しました。
 
 - [ひきこもりのいちにち （3/9～3/15）１週間でWebサービスを作るイベント - お題「Home」 - Crieit](https://crieit.net/boards/web1week-202003/92dca4690bdf3f3e98638e85b28220ce)

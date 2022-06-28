@@ -9,6 +9,7 @@ technologies:
 ---
 
 あなたの熱意が票になる、投票し放題の人気投票です。
+
 Firestoreの制限を超えるとサービスが落ちます。
 
 - [あなたの熱意が票になる人気投票 （5/18～5/24）１週間でWebサービスを作るイベント - お題「Like」 - Crieit](https://crieit.net/boards/web1week-202005/2191df8e32b59e9ebc1338e2bc46f2b7)

@@ -25,15 +25,20 @@ const WorksModal: NextPage<any> = ({
           onClick={() => setViewedWorkModal(false)}
         >
           <div className="sm:relative w-full h-full sm:h-auto sm:px-4 z-30">
-            <div className="fixed transform bottom-0 sm:static container mx-auto w-full sm:max-w-3xl overflow-scroll bg-white sm:shadow-lg sm:rounded-lg rounded-t-lg">
+            <div
+              className="fixed transform bottom-0 sm:static container mx-auto w-full sm:max-w-3xl overflow-scroll bg-white sm:shadow-lg sm:rounded-lg rounded-t-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <h3 className="text-lg leading-6 font-medium text-gray-900 mb-2">
+                <h3 className="font-bold text-xl text-gray-900">
                   {work.title}
                 </h3>
-                <Date dateString={work.date} />
+                <div className="mb-2 text-sm text-gray-500">
+                  <Date dateString={work.date} />
+                </div>
 
                 {work.technologies.length && (
-                  <ul className="flex space-x-1">
+                  <ul className="flex space-x-1 mb-2">
                     {work.technologies.map((technologyName) => {
                       return (
                         <li
@@ -48,7 +53,7 @@ const WorksModal: NextPage<any> = ({
                 )}
 
                 <div
-                  className="text-gray-600"
+                  className="markdown text-gray-600 mt-5"
                   dangerouslySetInnerHTML={{ __html: work.contentHtml }}
                 />
               </div>
