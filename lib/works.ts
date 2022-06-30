@@ -34,7 +34,6 @@ export const getSortedWorksData = () => {
       .process(matterResult.content);
     const contentHtml = processedContent.toString();
 
-    console.log(contentHtml);
     // Combine the data with the id
     return {
       id,

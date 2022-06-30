@@ -23,17 +23,15 @@ const WorksView: NextPage<any> = ({ allWorksData }) => {
             className="w-full md:w-1/3 flex flex-col no-underline hover:no-underline"
           >
             <div className="flex-1 overflow-hidden px-3 md:px-6 py-6">
-              <div
-                className="hover:cursor-pointer"
-                onClick={() => {
-                  setCurrentWork(work);
-                  setViewedWorkModal(true);
-                }}
-              >
+              <div>
                 <img
                   src={`/images/works/${work.id}.png`}
                   alt={work.title}
-                  className="rounded-lg shadow-lg hover:shadow-none"
+                  className="rounded-lg shadow-lg hover:shadow-none hover:cursor-pointer"
+                  onClick={() => {
+                    setCurrentWork(work);
+                    setViewedWorkModal(true);
+                  }}
                 />
 
                 <p className="w-full text-gray-600 text-xs md:text-sm pt-4">
