@@ -50,6 +50,11 @@ const Layout: NextPage<Props> = ({ children, home }: Props) => {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391068561417780"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <header className="fixed w-full z-10 top-0">
         <Header isHeightOver={isHeightOver} />
