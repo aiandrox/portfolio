@@ -123,7 +123,7 @@ const ProfileView: NextPage = () => {
           href="https://github.com/aiandrox"
           target="_blank"
         >
-          <GitHub color="#1E293B" />
+          <GitHub color="#171515" />
         </a>
         <a
           className="p-1 align-center hover:bg-opacity-50 hover:cursor-pointer"

@@ -5,9 +5,13 @@ import remark from "remark";
 import { unified } from "unified";
 import html from "remark-html";
 
+export type CareerType = "birthday" | "work" | "study";
+
 export type Career = {
   id: string;
   date: string;
+  endDate?: string;
+  type: CareerType;
   title: string;
   description: string;
 };

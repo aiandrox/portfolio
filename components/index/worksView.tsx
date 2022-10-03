@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Work } from "../../lib/works";
 import WorkModal from "./workModal";
 
-const WorksView: NextPage<any> = ({ allWorksData }) => {
+const WorksView: NextPage<any> = ({
+  allWorksData,
+}: {
+  allWorksData: Work[];
+}) => {
   const [currentWork, setCurrentWork] = useState<Work>();
   const [viewedWorkModal, setViewedWorkModal] = useState<boolean>(false);
 
