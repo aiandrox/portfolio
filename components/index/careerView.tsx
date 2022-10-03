@@ -98,10 +98,10 @@ const CareerView: NextPage<any> = ({
       <div className="relative flex flex-col p-6 w-full max-w-xl mx-auto">
         {allCareersData.map(
           ({ id, title, date, endDate, type, description }) => (
-            <div key={id} className="flex mb-10">
+            <div key={id} className="flex mb-8">
               <div className="flex flex-col items-center">
                 <Circle type={type} />
-                <div className="flex-1 w-px -mb-10 bg-gray-200"></div>
+                <div className="flex-1 w-px -mb-8 bg-gray-200"></div>
               </div>
               <div className="flex flex-col flex-1 ml-2 md:ml-4 space-y-4">
                 <div className="flex flex-col pt-1 contents-center">
@@ -113,7 +113,7 @@ const CareerView: NextPage<any> = ({
                 </div>
                 <div className="flex flex-col space-y-4">
                   <div className="-mt-2 prose prose-md">
-                    <p>{description}</p>
+                    <p className="whitespace-pre-line">{description}</p>
                   </div>
                 </div>
               </div>
