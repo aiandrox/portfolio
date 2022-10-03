@@ -84,3 +84,8 @@
 .markdown pre code {
   @apply font-semibold text-gray-600 text-sm;
 }
+
+/* hr */
+.markdown hr {
+  @apply my-3;
+}

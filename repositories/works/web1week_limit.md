@@ -11,4 +11,8 @@ web1weekの締め切りまでの秒数をカウントするだけのコンテン
 
 現在はweb1weekの提出期限を終了してからの秒数を刻み続けています。
 
+[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202009)で作りました。お題は **2** でした。
+
+---
+
 - [web1weekカウントダウン （9/7～9/13）１週間でWebサービスを作るイベント - お題「2」 - Crieit](https://crieit.net/boards/web1week-202009/web1week-5f562e43a9449)

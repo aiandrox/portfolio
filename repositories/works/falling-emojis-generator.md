@@ -9,4 +9,10 @@ technologies:
 
 絵文字を入力する→絵文字が落ちてくる
 
-- [絵文字を入力しがいのある『falling emojis genarator』 （2/22～2/28）１週間でWebサービスを作るイベント - お題「増やす」 - Crieit](https://crieit.net/boards/web1week-202102/falling-emojis-genarator)
+Slackスタンプを入力するときに自分はよく予測変換を使っているので、みんなもお気に入りのアイコンの名前くらいは覚えているのでは？と思って作りました。
+
+[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202102)で作りました。お題は **増やす** でした。
+
+---
+
+- [絵文字を入力しがいのある『falling emojis genarator』](https://crieit.net/boards/web1week-202102/falling-emojis-genarator)

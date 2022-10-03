@@ -11,5 +11,9 @@ technologies:
 
 Vue.jsを勉強しているときに思い立って作成しました。
 
+[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202003)で作りました。お題は **Home** でした。
+
+---
+
 - [ひきこもりのいちにち （3/9～3/15）１週間でWebサービスを作るイベント - お題「Home」 - Crieit](https://crieit.net/boards/web1week-202003/92dca4690bdf3f3e98638e85b28220ce)
 - [【個人開発】CDN版を使って育成ゲームのようなものを作った記録【Vue\.js】 - Qiita](https://qiita.com/aiandrox/items/a29181955d756561d63c)
