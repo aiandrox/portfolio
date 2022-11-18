@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/og": "^0.0.20",
     "animejs": "^3.2.1",
     "autoprefixer": "^10.4.13",
     "date-fns": "^2.29.3",
