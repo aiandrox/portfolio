@@ -23,8 +23,10 @@ export default async function handler(req: NextRequest) {
     // ?title=<title>
     const hasTitle = searchParams.has("title");
     const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 100)
+      ? searchParams.get("title").slice(0, 100)
       : "blog.aiandrox";
+    const hasTags = searchParams.has("tags");
+    const tags = hasTags ? searchParams.get("tags").split(",") : [];
 
     return new ImageResponse(
       (
@@ -34,26 +36,74 @@ export default async function handler(req: NextRequest) {
             height: "100%",
             width: "100%",
             display: "flex",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
             flexDirection: "column",
-            flexWrap: "nowrap",
           }}
         >
           <div
+            style={{ backgroundColor: "#ede89f", height: "10%", width: "100%" }}
+          ></div>
+          <div
             style={{
-              fontSize: 60,
-              fontFamily: '"Montserrat","NotoSans",sans-serif',
-              fontWeight: 700,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              height: "60%",
               letterSpacing: "-0.025em",
-              color: "#244f94",
-              padding: "0 120px",
-              lineHeight: 1.4,
-              whiteSpace: "pre-wrap",
             }}
           >
-            {title}
+            <div
+              style={{
+                textAlign: "center",
+                fontSize: 60,
+                color: "#244f94",
+                fontFamily: '"Montserrat","NotoSans",sans-serif',
+                lineHeight: 1.4,
+                whiteSpace: "normal",
+              }}
+            >
+              {title}
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              height: "20%",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                alignItems: "center",
+                fontSize: 30,
+                color: "#424242",
+                padding: "0 50px",
+              }}
+            >
+              {tags.map((tag, index) => (
+                <div key={index} style={{ margin: "0 10px" }}>{`#${tag}`}</div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
+              backgroundColor: "#ede89f",
+              height: "10%",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              fontFamily: '"Montserrat","NotoSans",sans-serif',
+              fontSize: 40,
+              color: "#244f94",
+            }}
+          >
+            <div style={{ paddingLeft: 880 }}>blog.aiandrox</div>
           </div>
         </div>
       ),
