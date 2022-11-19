@@ -45,8 +45,7 @@ export default async function handler(req: NextRequest) {
             style={{
               width: "100%",
               fontSize: 60,
-              fontStyle: "normal",
-              fontWeight: "bold",
+              textAlign: "center",
               color: "#244f94",
               padding: "0 120px",
               lineHeight: 1.3,
@@ -60,8 +59,6 @@ export default async function handler(req: NextRequest) {
             style={{
               width: "100%",
               fontSize: 40,
-              fontStyle: "normal",
-              fontWeight: "bold",
               color: "#424242",
               padding: "0 120px",
               lineHeight: 1.3,
