@@ -173,6 +173,11 @@
   resolved "https://registry.yarnpkg.com/@types/yoga-layout/-/yoga-layout-1.9.2.tgz#efaf9e991a7390dc081a0b679185979a83a9639a"
   integrity sha512-S9q47ByT2pPvD65IvrWp7qppVMpk9WGMbVq9wbWZOHg6tnXSD4vyhao6nOSBwwfDdV2p3Kx9evA9vI+XWTfDvw==
 
+"@vercel/analytics@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-0.1.5.tgz#285275b64a5b47cae0e5d11002fb8856b1ec6b0c"
+  integrity sha512-/k9N8Ea3Yc5A52GlkjzUEbi2vE/izClrOf++ryBkxEfrZM/OZwtHkdNw/QExZ1h/B67RCZLK7bCOnKKrhG7gTg==
+
 "@vercel/og@^0.0.20":
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/@vercel/og/-/og-0.0.20.tgz#fe586d153e492edd87fe2bc2671ba223072bd47a"
