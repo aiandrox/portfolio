@@ -5,17 +5,17 @@ export const config = {
   runtime: "experimental-edge",
 };
 
-// Make sure the font exists in the specified path:
-const montserrat = fetch(
-  new URL("../../../assets/Montserrat-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
-const notosans = fetch(
-  new URL("../../../assets/NotoSansJP-Bold.otf", import.meta.url)
-).then((res) => res.arrayBuffer());
+// // Make sure the font exists in the specified path:
+// const montserrat = fetch(
+//   new URL("../../../assets/Montserrat-Bold.ttf", import.meta.url)
+// ).then((res) => res.arrayBuffer());
+// const notosans = fetch(
+//   new URL("../../../assets/NotoSansJP-Bold.otf", import.meta.url)
+// ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
-  const montserratData = await montserrat;
-  const notosansData = await notosans;
+  // const montserratData = await montserrat;
+  // const notosansData = await notosans;
 
   try {
     const { searchParams } = new URL(req.url);
@@ -110,18 +110,18 @@ export default async function handler(req: NextRequest) {
       {
         width: 1200,
         height: 630,
-        fonts: [
-          {
-            name: "Montserrat",
-            data: montserratData,
-            style: "normal",
-          },
-          {
-            name: "NotoSans",
-            data: notosansData,
-            style: "normal",
-          },
-        ],
+        // fonts: [
+        //   {
+        //     name: "Montserrat",
+        //     data: montserratData,
+        //     style: "normal",
+        //   },
+        //   {
+        //     name: "NotoSans",
+        //     data: notosansData,
+        //     style: "normal",
+        //   },
+        // ],
       }
     );
   } catch (e: any) {
