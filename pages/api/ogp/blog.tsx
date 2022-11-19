@@ -24,6 +24,9 @@ export default async function handler(req: NextRequest) {
     const tags = hasTags ? searchParams.get("tags").split(",") : [];
     const tagsText = tags.map((tag) => `#${tag}`).join(" ");
 
+    const hasImage = searchParams.has("image");
+    const imageSrc = hasImage ? searchParams.get("image") : "";
+
     return new ImageResponse(
       (
         <div
@@ -34,7 +37,6 @@ export default async function handler(req: NextRequest) {
             height: "100%",
             width: "100%",
             display: "flex",
-            textAlign: "left",
             alignItems: "flex-start",
             justifyContent: "center",
             flexDirection: "column",
@@ -55,16 +57,27 @@ export default async function handler(req: NextRequest) {
           >
             {title}
           </div>
-          <div
-            style={{
-              width: "100%",
-              fontSize: 40,
-              color: "#424242",
-              padding: "0 120px",
-              lineHeight: 1.3,
-            }}
-          >
-            {tagsText}
+          <div style={{ display: "flex", width: "100%", padding: "0 120px" }}>
+            <div
+              style={{
+                fontSize: 40,
+                color: "#424242",
+                width: hasImage ? "80%" : "100%",
+                lineHeight: 1.3,
+              }}
+            >
+              {tagsText}
+            </div>
+            {hasImage && (
+              <div
+                style={{
+                  display: "flex",
+                  width: "20%",
+                }}
+              >
+                <img src={`https://blog.aiandrox.com/${imageSrc}`} />
+              </div>
+            )}
           </div>
         </div>
       ),
