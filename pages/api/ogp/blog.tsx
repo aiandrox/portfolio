@@ -22,83 +22,52 @@ export default async function handler(req: NextRequest) {
 
     const hasTags = searchParams.has("tags");
     const tags = hasTags ? searchParams.get("tags").split(",") : [];
+    const tagsText = tags.map((tag) => `#${tag}`).join(" ");
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: "white",
+            backgroundImage:
+              "url(https://aiandrox.com/images/blogogp_background.png)",
+            backgroundSize: "100% 100%",
             height: "100%",
             width: "100%",
             display: "flex",
+            textAlign: "left",
+            alignItems: "flex-start",
+            justifyContent: "center",
             flexDirection: "column",
+            flexWrap: "nowrap",
           }}
         >
           <div
-            style={{ backgroundColor: "#ede89f", height: "10%", width: "100%" }}
-          ></div>
-          <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              height: "60%",
-              letterSpacing: "-0.025em",
-            }}
-          >
-            <div
-              style={{
-                textAlign: "center",
-                fontSize: 60,
-                color: "#244f94",
-                fontFamily: '"Montserrat","NotoSans",sans-serif',
-                lineHeight: 1.4,
-                whiteSpace: "normal",
-              }}
-            >
-              {title}
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: "20%",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-                alignItems: "center",
-                fontSize: 30,
-                color: "#424242",
-                padding: "0 50px",
-              }}
-            >
-              {tags.map((tag, index) => (
-                <div key={index} style={{ margin: "0 10px" }}>{`#${tag}`}</div>
-              ))}
-            </div>
-          </div>
-
-          <div
-            style={{
-              backgroundColor: "#ede89f",
-              height: "10%",
               width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              fontFamily: '"Montserrat","NotoSans",sans-serif',
-              fontSize: 40,
+              fontSize: 60,
+              fontStyle: "normal",
+              fontWeight: "bold",
               color: "#244f94",
+              padding: "0 120px",
+              lineHeight: 1.3,
+              marginBottom: "30px",
+              wordWrap: "break-word",
             }}
           >
-            <div style={{ paddingLeft: 880 }}>blog.aiandrox</div>
+            {title}
+          </div>
+          <div
+            style={{
+              width: "100%",
+              fontSize: 40,
+              fontStyle: "normal",
+              fontWeight: "bold",
+              color: "#424242",
+              padding: "0 120px",
+              lineHeight: 1.3,
+            }}
+          >
+            {tagsText}
           </div>
         </div>
       ),
