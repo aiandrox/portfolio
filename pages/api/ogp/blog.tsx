@@ -21,7 +21,9 @@ export default async function handler(req: NextRequest) {
       : "blog.aiandrox";
 
     const hasTags = searchParams.has("tags");
-    const tags = hasTags ? searchParams.get("tags").split(",") : [];
+    const tags = hasTags
+      ? searchParams.get("tags").split(",").filter(Boolean)
+      : [];
     const tagsText = tags.map((tag) => `#${tag}`).join(" ");
 
     const hasImage = searchParams.has("image");
@@ -68,7 +70,7 @@ export default async function handler(req: NextRequest) {
             >
               {tagsText}
             </div>
-            {hasImage && (
+            {imageSrc && (
               <div
                 style={{
                   display: "flex",
