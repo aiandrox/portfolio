@@ -37,7 +37,7 @@ const WorksModal: NextPage<any> = ({
                   <Date dateString={work.date} />
                 </div>
 
-                {work.technologies.length && (
+                {work.technologies?.length && (
                   <ul className="flex space-x-1 mb-2">
                     {work.technologies.map((technologyName) => {
                       return (

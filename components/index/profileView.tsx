@@ -37,7 +37,7 @@ const Twitter = ({
   return (
     <svg
       data-name="twitter"
-      enable-background="new 0 0 24 24"
+      enableBackground="new 0 0 24 24"
       viewBox="0 0 24 24"
       width={size}
       height={size}
