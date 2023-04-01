@@ -9,11 +9,7 @@ type Props = {
   work: Work;
 };
 
-const WorksModal: NextPage<any> = ({
-  viewed,
-  setViewedWorkModal,
-  work,
-}: Props) => {
+const WorksModal: NextPage<any> = ({ viewed, setViewedWorkModal, work }: Props) => {
   return (
     <>
       {viewed && (
@@ -30,9 +26,7 @@ const WorksModal: NextPage<any> = ({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <h3 className="font-bold text-xl text-gray-900">
-                  {work.title}
-                </h3>
+                <h3 className="font-bold text-xl text-gray-900">{work.title}</h3>
                 <div className="mb-2 text-sm text-gray-500">
                   <Date dateString={work.date} />
                 </div>
@@ -70,9 +64,11 @@ const WorksModal: NextPage<any> = ({
                   <a
                     href={work.url}
                     target="_blank"
-                    className="w-full inline-flex justify-center  px-4 py-2 text-base font-medium gradient text-white hover:opacity-80"
+                    className={`w-full inline-flex justify-center px-4 py-2 text-base font-medium text-white ${
+                      work.url ? "gradient hover:opacity-80" : "bg-gray-300"
+                    }`}
                   >
-                    Website
+                    {work.url ? "Website" : "Website Closed"}
                   </a>
                 </div>
               </div>
