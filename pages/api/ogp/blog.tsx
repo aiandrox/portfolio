@@ -6,7 +6,7 @@ export const config = {
 };
 
 const notosans = fetch(
-  new URL("../../../assets/NotoSansJP-Bold.otf", import.meta.url)
+  new URL("../../../assets/Lighted-NotoSansJP-Bold.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
@@ -16,14 +16,10 @@ export default async function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url);
 
     const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title").slice(0, 100)
-      : "blog.aiandrox";
+    const title = hasTitle ? searchParams.get("title").slice(0, 100) : "blog.aiandrox";
 
     const hasTags = searchParams.has("tags");
-    const tags = hasTags
-      ? searchParams.get("tags").split(",").filter(Boolean)
-      : [];
+    const tags = hasTags ? searchParams.get("tags").split(",").filter(Boolean) : [];
     const tagsText = tags.map((tag) => `#${tag}`).join(" ");
 
     const hasImage = searchParams.has("image");
@@ -33,8 +29,7 @@ export default async function handler(req: NextRequest) {
       (
         <div
           style={{
-            backgroundImage:
-              "url(https://aiandrox.com/images/blogogp_background.png)",
+            backgroundImage: "url(https://aiandrox.com/images/blogogp_background.png)",
             backgroundSize: "100% 100%",
             height: "100%",
             width: "100%",
