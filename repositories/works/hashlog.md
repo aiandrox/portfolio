@@ -1,7 +1,6 @@
 ---
 title: Hashlog（ハッシュログ）
 date: "2020-06-15"
-url: https://hashlog.work
 repo_url: https://github.com/aiandrox/hashlog
 technologies:
   - Ruby on Rails
