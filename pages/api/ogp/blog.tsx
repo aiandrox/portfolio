@@ -5,12 +5,12 @@ export const config = {
   runtime: "experimental-edge",
 };
 
-const notosans = fetch(
-  new URL("../../../assets/Lighted-NotoSansJP-Bold.otf", import.meta.url)
-).then((res) => res.arrayBuffer());
+// const notosans = fetch(
+//   new URL("../../../assets/Lighted-NotoSansJP-Bold.otf", import.meta.url)
+// ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
-  const notosansData = await notosans;
+  // const notosansData = await notosans;
 
   try {
     const { searchParams } = new URL(req.url);
@@ -81,13 +81,13 @@ export default async function handler(req: NextRequest) {
       {
         width: 1200,
         height: 630,
-        fonts: [
-          {
-            name: "NotoSans",
-            data: notosansData,
-            style: "normal",
-          },
-        ],
+        // fonts: [
+        //   {
+        //     name: "NotoSans",
+        //     data: notosansData,
+        //     style: "normal",
+        //   },
+        // ],
       }
     );
   } catch (e: any) {
