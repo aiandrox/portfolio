@@ -57,7 +57,9 @@ const WorksModal: NextPage<any> = ({ viewed, setViewedWorkModal, work }: Props) 
                   <a
                     href={work.repo_url}
                     target="_blank"
-                    className="w-full inline-flex justify-center px-4 py-2 text-base font-medium bg-white text-gray-700 hover:bg-gray-50 border border-gray-300 border-r-0 rounded-l-md"
+                    className={`w-full inline-flex justify-center px-4 py-2 text-base font-medium bg-white text-gray-700 border border-gray-300 border-r-0 rounded-l-md ${
+                      work.repo_url ? "hover:opacity-80" : ""
+                    }`}
                   >
                     GitHub
                   </a>
