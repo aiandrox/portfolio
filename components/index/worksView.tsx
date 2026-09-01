@@ -31,7 +31,7 @@ const WorksView: NextPage<any> = ({
                 <img
                   src={`/images/works/${work.id}.png`}
                   alt={work.title}
-                  className="rounded-lg shadow-lg hover:shadow-none hover:cursor-pointer"
+                  className="w-full aspect-video object-cover object-top rounded-lg shadow-lg hover:shadow-none hover:cursor-pointer"
                   onClick={() => {
                     setCurrentWork(work);
                     setViewedWorkModal(true);
