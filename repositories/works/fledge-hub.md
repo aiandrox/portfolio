@@ -1,7 +1,6 @@
 ---
 title: Fledge Hub
 date: "2021-10-10"
-url: https://fledge-hub.com/
 repo_url: https://github.com/runteq/fledge-hub
 technologies:
   - Ruby on Rails
