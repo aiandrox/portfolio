@@ -10,16 +10,17 @@
    Portfolio redesign (2026)
    ========================================================= */
 :root {
-  --pf-bg: #ffffff;
-  --pf-bg-alt: #f7f7f7;
-  --pf-ink: #1f2937;
-  --pf-ink-soft: #6b7280;
-  --pf-ink-body: #4b5563;
-  --pf-rule: #e5e7eb;
-  --pf-grad: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-  --pf-work: rgb(94, 85, 66);
-  --pf-study: rgb(32, 141, 195);
-  --pf-life: rgb(209, 31, 73);
+  /* 背景の八重桜写真（淡いピンク・やわらかな緑・ハイキーな光）に合わせた温色系 */
+  --pf-bg: #fffcfb;
+  --pf-bg-alt: #f9f1ef;
+  --pf-ink: #38302f;
+  --pf-ink-soft: #8c7f7e;
+  --pf-ink-body: #5a4f4e;
+  --pf-rule: #efe2df;
+  --pf-grad: linear-gradient(90deg, #d5678f 0%, #e0b892 100%);
+  --pf-work: rgb(120, 100, 84);
+  --pf-study: rgb(74, 150, 170);
+  --pf-life: rgb(205, 92, 128);
 }
 
 html {
@@ -50,8 +51,8 @@ body {
   padding: 3rem 1.5rem 2.5rem;
   background: linear-gradient(
     to bottom,
-    rgba(251, 248, 243, 0) 45%,
-    rgba(251, 248, 243, 0.55) 100%
+    rgba(255, 252, 251, 0) 45%,
+    rgba(255, 252, 251, 0.55) 100%
   );
 }
 .pf-hero-inner {
@@ -290,10 +291,184 @@ body {
   padding: 2.5rem 1.5rem;
   color: var(--pf-ink-body);
   font-size: 0.75rem;
-  text-shadow: 0 1px 3px rgba(251, 248, 243, 0.8);
+  text-shadow: 0 1px 3px rgba(255, 252, 251, 0.8);
+}
+
+/* ---- project detail page ---- */
+.pf-proj-page {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 4rem;
+}
+.pf-proj-back {
+  font-size: 0.85rem;
+  color: var(--pf-ink-soft);
+  text-decoration: none;
+}
+.pf-proj-back:hover {
+  color: var(--pf-ink);
+}
+.pf-proj-layout {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .pf-proj-layout {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+.pf-proj-aside {
+  flex: none;
+}
+@media (min-width: 768px) {
+  .pf-proj-aside {
+    width: 13rem;
+  }
+}
+.pf-proj-body {
+  min-width: 0;
+  flex: 1;
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .pf-proj-body {
+    margin-top: 0;
+  }
+}
+.pf-proj-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--pf-ink);
+}
+.pf-proj-date {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--pf-ink-soft);
+}
+.pf-proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pf-proj-tags li {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--pf-rule);
+  border-radius: 999px;
+  color: var(--pf-ink-body);
+}
+.pf-proj-hero {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.18);
+}
+.pf-proj-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.pf-proj-links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.pf-proj-links .is-github {
+  background: var(--pf-bg);
+  color: var(--pf-ink-body);
+  border: 1px solid var(--pf-rule);
+}
+.pf-proj-links .is-web {
+  background: var(--pf-grad);
+  color: #fff;
+}
+.pf-proj-links a:not(.is-disabled):hover {
+  opacity: 0.85;
+}
+.pf-proj-links .is-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ---- project sidebar (flat list, single small radius) ---- */
+.pf-side {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.pf-side a {
+  display: block;
+  width: 9.5rem;
+  flex: none;
+  text-decoration: none;
+  color: inherit;
+}
+.pf-side img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  opacity: 0.45;
+  filter: grayscale(0.5);
+  transition: opacity 0.12s, filter 0.12s;
+}
+.pf-side a:hover img,
+.pf-side a[data-active="true"] img {
+  opacity: 1;
+  filter: none;
+}
+.pf-side-name {
+  display: none;
+}
+@media (min-width: 768px) {
+  .pf-side {
+    flex-direction: column;
+    overflow: visible;
+    padding-bottom: 0;
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+  .pf-side a {
+    width: 100%;
+    border-left: 2px solid transparent;
+    padding-left: 0.6rem;
+  }
+  .pf-side a[data-active="true"] {
+    border-left-color: var(--pf-life);
+  }
+  .pf-side-name {
+    display: block;
+    padding-top: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--pf-ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pf-side a[data-active="true"] .pf-side-name {
+    color: var(--pf-ink);
+    font-weight: 600;
+  }
 }
 
 /* マークダウン用 */
+.markdown {
+  color: var(--pf-ink-body);
+}
 .markdown h1,
 .markdown h2 {
   @apply text-xl my-6;
@@ -347,7 +522,9 @@ body {
 
 /* Blockquotes */
 .markdown blockquote {
-  @apply p-2 mx-2 my-2 bg-gray-100 mb-4 border-l-4 border-gray-400 rounded-r-lg;
+  @apply p-2 mx-2 my-2 mb-4 border-l-4 rounded-r-lg;
+  background: var(--pf-bg-alt);
+  border-color: var(--pf-rule);
 }
 .markdown blockquote > p {
   @apply mb-0;
@@ -360,16 +537,19 @@ body {
 
 /* Code */
 .markdown :not(pre) > code {
-  @apply bg-indigo-50 p-1 font-semibold text-gray-600 rounded-lg;
+  @apply p-1 font-semibold rounded-lg;
+  background: var(--pf-bg-alt);
 }
 
 /* Pre */
 .markdown pre {
-  @apply bg-gray-100 my-2 p-2 leading-none rounded-md;
+  @apply my-2 p-2 leading-none rounded-md;
+  background: var(--pf-bg-alt);
 }
 
 .markdown pre code {
-  @apply font-semibold text-gray-600 text-sm;
+  @apply font-semibold text-sm;
+  color: var(--pf-ink-body);
 }
 
 /* hr */

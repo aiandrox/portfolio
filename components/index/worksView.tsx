@@ -10,7 +10,7 @@ const WorksView: NextPage<any> = ({ allWorksData }: { allWorksData: Work[] }) =>
 
       <div className="pf-works">
         {allWorksData.map((work: Work) => (
-          <Link key={work.id} href={`/works/${work.id}`} className="pf-work">
+          <Link key={work.id} href={`/projects/${work.id}`} className="pf-work">
             <img
               src={`/images/works/${work.id}.png`}
               alt={work.title}

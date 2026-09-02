@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
 
       <div className="pf-gap" aria-hidden="true"></div>
 
-      <section id="works" className="pf-section pf-section--alt">
+      <section id="projects" className="pf-section pf-section--alt">
         <WorksView allWorksData={allWorksData} />
       </section>
 
