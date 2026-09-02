@@ -37,7 +37,7 @@ const WorkPage: NextPage<Props> = ({ work, works }: Props) => {
           href="/#works"
           className="text-sm text-gray-500 hover:opacity-80"
         >
-          ← Side Projects
+          ← Personal Projects
         </Link>
 
         <div className="mt-4 md:flex md:gap-8">
