@@ -6,7 +6,6 @@ import Layout, { siteTitle } from "../components/layout";
 import ProfileView from "../components/index/profileView";
 import WorksView from "../components/index/worksView";
 import CareerView from "../components/index/careerView";
-import LinksView from "../components/index/linksView";
 
 type Props = {
   allWorksData: Work[];
@@ -43,12 +42,6 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
 
       <section id="career" className="pf-section">
         <CareerView allCareersData={allCareersData} />
-      </section>
-
-      <div className="pf-gap" aria-hidden="true"></div>
-
-      <section id="links" className="pf-section pf-section--alt">
-        <LinksView />
       </section>
 
       <div className="pf-gap" aria-hidden="true"></div>
