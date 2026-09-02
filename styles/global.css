@@ -158,13 +158,11 @@ body {
   margin-top: 1.8rem;
 }
 .pf-socials a {
-  color: var(--pf-ink);
-  opacity: 0.8;
-  transition: opacity 0.12s;
   display: inline-flex;
+  transition: transform 0.12s;
 }
 .pf-socials a:hover {
-  opacity: 1;
+  transform: translateY(-2px);
 }
 .pf-socials a:focus-visible {
   outline: 2px solid var(--pf-ink);
