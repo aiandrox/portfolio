@@ -37,6 +37,8 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
         <CareerView allCareersData={allCareersData} />
       </section>
 
+      <div className="pf-strip" role="presentation" aria-hidden="true"></div>
+
       <section id="links" className="pf-section pf-section--alt">
         <LinksView />
       </section>

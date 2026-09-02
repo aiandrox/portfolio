@@ -271,6 +271,14 @@ body {
   border-top: 1px solid var(--pf-rule);
 }
 
+/* full-bleed photo divider */
+.pf-strip {
+  height: clamp(120px, 18vw, 200px);
+  background-image: url("/images/photos/divider-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* マークダウン用 */
 .markdown h1,
 .markdown h2 {
