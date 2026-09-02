@@ -45,7 +45,8 @@ body {
 .pf-hero {
   display: flex;
   align-items: flex-end;
-  min-height: clamp(360px, 60vh, 600px);
+  min-height: 82vh; /* fallback for browsers without svh */
+  min-height: max(320px, 82svh);
   padding: 3rem 1.5rem 2.5rem;
   background: linear-gradient(
     to bottom,
