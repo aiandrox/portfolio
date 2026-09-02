@@ -38,7 +38,36 @@ body {
   background: url("/images/photos/background.jpg") center / cover no-repeat;
 }
 .pf-gap {
-  height: clamp(90px, 14vw, 170px);
+  height: clamp(44px, 7vw, 88px);
+}
+
+/* photo hero */
+.pf-hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(360px, 60vh, 600px);
+  padding: 3rem 1.5rem 2.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(251, 248, 243, 0) 45%,
+    rgba(251, 248, 243, 0.55) 100%
+  );
+}
+.pf-hero-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.pf-hero-title {
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+.pf-hero-sub {
+  margin: 0.35rem 0 0;
+  color: var(--pf-ink-body);
+  letter-spacing: 0.02em;
 }
 
 .pf-topbar {
@@ -281,10 +310,9 @@ body {
 .pf-foot {
   text-align: center;
   padding: 2.5rem 1.5rem;
-  color: var(--pf-ink-soft);
+  color: var(--pf-ink-body);
   font-size: 0.75rem;
-  border-top: 1px solid var(--pf-rule);
-  background: var(--pf-bg);
+  text-shadow: 0 1px 3px rgba(251, 248, 243, 0.8);
 }
 
 /* マークダウン用 */

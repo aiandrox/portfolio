@@ -1,6 +1,5 @@
 import { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { getSortedWorksData, sortWorks, Work } from "../lib/works";
 import { getSortedCareersData, Career } from "../lib/careers";
 import Layout, { siteTitle } from "../components/layout";
@@ -23,9 +22,12 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
 
       <div className="pf-bg-fixed" aria-hidden="true"></div>
 
-      <div className="pf-topbar">
-        <Link href="/">aiandrox.com</Link>
-      </div>
+      <header className="pf-hero">
+        <div className="pf-hero-inner">
+          <h1 className="pf-hero-title">aiandrox.com</h1>
+          <p className="pf-hero-sub">Web Developer END&apos;s site.</p>
+        </div>
+      </header>
 
       <section id="profile" className="pf-section pf-section--intro">
         <ProfileView />
@@ -48,6 +50,8 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
       <section id="links" className="pf-section pf-section--alt">
         <LinksView />
       </section>
+
+      <div className="pf-gap" aria-hidden="true"></div>
 
       <footer className="pf-foot">
         © 2022–{new Date().getFullYear()} aiandrox.com
