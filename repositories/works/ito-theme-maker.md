@@ -7,4 +7,6 @@ technologies:
   - React
 ---
 
-ボードゲームの[ito](https://arclightgames.jp/product/ito/)が好きなので、お題を一覧で見れるアプリを作りました。
+ボードゲームの[ito](https://arclightgames.jp/product/ito/)が好きで、お題を一覧で眺められるアプリを作りました。ゲーム中に次のお題を探すのが地味に面倒だったので。
+
+React だけのシンプルな構成です。

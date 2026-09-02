@@ -8,11 +8,9 @@ technologies:
   - Firebase
 ---
 
-あなたの熱意が票になる、投票し放題の人気投票です。
+あなたの熱意が票になる、何度でも投票できるきのこ・たけのこ人気投票です。Firestore の無料枠を超えると落ちます。
 
-Firestoreの制限を超えるとサービスが落ちます。
-
-[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202005)で作りました。お題は **Like** でした。
+[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202005)（お題：**Like**）の提出作品です。Vue.js + Firebase で、初めて Firestore を触りました。
 
 ---
 

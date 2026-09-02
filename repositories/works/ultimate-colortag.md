@@ -8,9 +8,9 @@ technologies:
   - React
 ---
 
-あなたはカラーコードから色を当てられるか？ 最高難度のいろおにに挑め
+カラーコードから色を当てる、いろおにです。制限時間内にどれだけ近い色を当てられるかを競います。
 
-2021年GWに[ふぁらお](https://twitter.com/mochimochifarao)が主催した「何か作ろう」のイベントで作りました。
+2021年GWの[ふぁらお](https://twitter.com/mochimochifarao)主催「何か作ろう」イベントで作りました。TypeScript + React。色の近さの判定で少し遊びました。
 
 ---
 

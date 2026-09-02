@@ -9,9 +9,9 @@ technologies:
   - Youtube IFrame Player API
 ---
 
-1月1日0時0分にｳﾙﾄﾗｿｳｯ ＼ﾊｧｲ／を成功させたら あなたはウルトラソウル。
+1月1日0時0分ちょうどにｳﾙﾄﾗｿｳｯ ＼ﾊｧｲ／を成功させると、あなたはウルトラソウル。年越しの瞬間に叫ぶ練習をするアプリです。
 
-憧れだった[クソアプリアドベントカレンダー](https://qiita.com/advent-calendar/2020/kuso-app)を出せたので満足です。
+憧れだった[クソアプリアドベントカレンダー](https://qiita.com/advent-calendar/2020/kuso-app)に出せて満足しています。JavaScript + YouTube IFrame Player API で BGM を同期し、Firebase を使っています。
 
 ---
 

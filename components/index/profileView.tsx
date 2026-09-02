@@ -15,7 +15,7 @@ const Qiita = ({ color = "currentColor", size = 32 }: { color?: string; size?: n
   );
 };
 
-const Twitter = ({ color = "currentColor", size = 32 }: { color?: string; size?: number }) => {
+const XIcon = ({ color = "currentColor", size = 32 }: { color?: string; size?: number }) => {
   return (
     <svg
       data-name="x"
@@ -43,59 +43,33 @@ const GitHub = ({ color = "currentColor", size = 32 }: { color?: string; size?: 
 
 const ProfileView: NextPage = () => {
   return (
-    <div className="container max-w-5xl mx-auto m-8">
-      <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center">Profile</h1>
-      <div className="w-full mb-4">
-        <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-      </div>
-      <div className="flex flex-wrap items-center justify-center sm:flex-row pt-6">
-        <div className="inline-block p-6">
-          <div className="rounded-full shadow">
-            <img
-              src="/images/profile.jpg"
-              height={120}
-              width={120}
-              alt="END"
-              className="rounded-full"
-            />
-          </div>
-        </div>
-        <div className="w-full sm:w-1/3 p-6">
-          <h3 className="text-3xl text-gray-800 font-bold leading-none">END</h3>
-          <p className="text-gray-500 text-sm mb-3">@aiandrox</p>
-          <p className="text-gray-600">
-            岡山→山梨→東京
+    <div className="pf-wrap">
+      <div className="pf-intro">
+        <img src="/images/profile.jpg" width={120} height={120} alt="END" className="pf-intro-pic" />
+        <div>
+          <h1 className="pf-intro-name">END</h1>
+          <p className="pf-intro-at">@aiandrox</p>
+          <p className="pf-intro-bio">
+            岡山 → 山梨 → 東京 → 神奈川
             <br />
             2020年からエンジニアとして働いています。
             <br />
-            業務では、主にRailsを書いています。
+            業務では、主に Rails を書いています。
             <br />
             <br />
-            趣味：リアル脱出ゲーム、カメラ
+            趣味：ボードゲーム、カメラ
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap mx-auto w-40 items-center justify-between">
-        <a
-          className="p-1 hover:bg-opacity-50 hover:cursor-pointer"
-          href="https://twitter.com/aiandrox"
-          target="_blank"
-        >
-          <Twitter color="#000000" size={24} />
+      <div className="pf-socials">
+        <a href="https://x.com/aiandrox" target="_blank" rel="noreferrer" aria-label="X">
+          <XIcon color="currentColor" size={22} />
         </a>
-        <a
-          className="p-1 hover:bg-opacity-50 hover:cursor-pointer"
-          href="https://github.com/aiandrox"
-          target="_blank"
-        >
-          <GitHub color="#171515" />
+        <a href="https://github.com/aiandrox" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <GitHub color="currentColor" size={24} />
         </a>
-        <a
-          className="p-1 align-center hover:bg-opacity-50 hover:cursor-pointer"
-          href="https://qiita.com/aiandrox"
-          target="_blank"
-        >
-          <Qiita color="#59bb0c" />
+        <a href="https://qiita.com/aiandrox" target="_blank" rel="noreferrer" aria-label="Qiita">
+          <Qiita color="currentColor" size={24} />
         </a>
       </div>
     </div>

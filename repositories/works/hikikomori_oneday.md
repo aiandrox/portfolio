@@ -7,11 +7,9 @@ technologies:
   - Vue.js
 ---
 
-家で一日を過ごす育成ゲームのような何かです。
+家で一日を過ごすだけの、育成ゲームのような何かです。
 
-Vue.jsを勉強しているときに思い立って作成しました。
-
-[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202003)で作りました。お題は **Home** でした。
+Vue.js を勉強中で、CDN 版でとりあえず動くものを作ってみたかったので。[１週間でWebサービスを作るイベント](https://crieit.net/boards/web1week-202003)（お題：**Home**）の提出作品で、web1week には初参加でした。
 
 ---
 

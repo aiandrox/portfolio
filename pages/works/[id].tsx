@@ -28,12 +28,16 @@ const WorkPage: NextPage<Props> = ({ work, works }: Props) => {
         <meta name="twitter:image" content={ogImage} />
       </Head>
 
-      <div className="mx-auto w-full max-w-4xl px-4 pt-24 pb-16">
+      <div className="pf-topbar">
+        <Link href="/">aiandrox.com</Link>
+      </div>
+
+      <div className="mx-auto w-full max-w-4xl px-4 pt-8 pb-16">
         <Link
           href="/#works"
           className="text-sm text-gray-500 hover:opacity-80"
         >
-          ← Works一覧
+          ← Side Projects
         </Link>
 
         <div className="mt-4 md:flex md:gap-8">
