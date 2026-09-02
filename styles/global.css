@@ -399,6 +399,71 @@ body {
   pointer-events: none;
 }
 
+/* ---- screenshot gallery + lightbox ---- */
+.pf-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+@media (max-width: 600px) {
+  .pf-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.pf-gallery-item {
+  display: block;
+  padding: 0;
+  border: 1px solid var(--pf-rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--pf-bg);
+  cursor: zoom-in;
+}
+.pf-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+.pf-gallery-item:hover {
+  border-color: var(--pf-life);
+}
+.pf-gallery-item:focus-visible {
+  outline: 2px solid var(--pf-life);
+  outline-offset: 2px;
+}
+.pf-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(28, 22, 22, 0.82);
+}
+.pf-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.pf-lightbox-close {
+  position: fixed;
+  top: 0.75rem;
+  right: 1.25rem;
+  padding: 0;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* ---- project sidebar (flat list, single small radius) ---- */
 .pf-side {
   display: flex;

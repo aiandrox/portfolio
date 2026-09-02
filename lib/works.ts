@@ -12,6 +12,7 @@ export type Work = {
   repo_url: string;
   technologies: string[];
   contentHtml: string;
+  gallery: string[];
 };
 
 export type WorkSummary = {
@@ -80,7 +81,19 @@ export const getWorkData = async (id: string): Promise<Work> => {
     id,
     contentHtml: processedContent.toString(),
     ...(matterResult.data as Work),
+    gallery: getGalleryImages(id),
   };
+};
+
+// public/images/works/<id>/ にある画像を名前順で返す（ギャラリー用）
+const getGalleryImages = (id: string): string[] => {
+  const dir = path.join(process.cwd(), "public/images/works", id);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((file) => /\.(png|jpe?g|webp)$/i.test(file))
+    .sort()
+    .map((file) => `/images/works/${id}/${file}`);
 };
 
 // サイドバー用に全作品を日付順（新しい順）で返す

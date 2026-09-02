@@ -4,6 +4,7 @@ import Link from "next/link";
 import Layout, { siteTitle } from "../../components/layout";
 import Date from "../../components/date";
 import WorksSidebar from "../../components/works/worksSidebar";
+import Gallery from "../../components/works/gallery";
 import {
   getAllWorkIds,
   getWorkData,
@@ -61,6 +62,8 @@ const ProjectPage: NextPage<Props> = ({ work, works }: Props) => {
               alt={work.title}
               className="pf-proj-hero"
             />
+
+            <Gallery images={work.gallery} title={work.title} />
 
             <div
               className="markdown mt-6"
