@@ -28,7 +28,7 @@ const WorkPage: NextPage<Props> = ({ work, works }: Props) => {
         <meta name="twitter:image" content={ogImage} />
       </Head>
 
-      <div className="container mx-auto max-w-5xl px-4 pt-24 pb-16">
+      <div className="mx-auto w-full max-w-4xl px-4 pt-24 pb-16">
         <Link
           href="/#works"
           className="text-sm text-gray-500 hover:opacity-80"
@@ -41,7 +41,7 @@ const WorkPage: NextPage<Props> = ({ work, works }: Props) => {
             <WorksSidebar works={works} currentId={work.id} />
           </aside>
 
-          <article className="min-w-0 flex-1 md:max-w-2xl">
+          <article className="mt-6 min-w-0 flex-1 md:mt-0">
             <h1 className="text-3xl font-bold text-gray-900">{work.title}</h1>
             <div className="mt-1 text-sm text-gray-500">
               <Date dateString={work.date} />
