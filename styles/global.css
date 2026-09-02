@@ -68,7 +68,7 @@
 
 /* Images */
 .markdown img {
-  @apply shadow-lg;
+  @apply shadow-lg rounded-lg my-4 max-w-full;
 }
 
 /* Code */

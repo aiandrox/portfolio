@@ -42,9 +42,12 @@ const Header: NextPage<Props> = ({ isHeightOver }: Props) => {
           {isHeightOver ? (
             <></>
           ) : (
-            <a className="no-underline hover:no-underline hover:cursor-pointer font-bold text-2xl text-4xl md:block hidden">
+            <Link
+              href="/"
+              className="no-underline hover:no-underline hover:cursor-pointer font-bold text-2xl text-4xl md:block hidden"
+            >
               {siteTitle}
-            </a>
+            </Link>
           )}
         </div>
         <div className="block lg:hidden pr-4">
