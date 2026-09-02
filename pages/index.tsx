@@ -21,6 +21,8 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
         <title>{siteTitle}</title>
       </Head>
 
+      <div className="pf-bg-fixed" aria-hidden="true"></div>
+
       <div className="pf-topbar">
         <Link href="/">aiandrox.com</Link>
       </div>
@@ -29,15 +31,19 @@ const Home: NextPage<Props> = ({ allWorksData, allCareersData }: Props) => {
         <ProfileView />
       </section>
 
+      <div className="pf-gap" aria-hidden="true"></div>
+
       <section id="works" className="pf-section pf-section--alt">
         <WorksView allWorksData={allWorksData} />
       </section>
+
+      <div className="pf-gap" aria-hidden="true"></div>
 
       <section id="career" className="pf-section">
         <CareerView allCareersData={allCareersData} />
       </section>
 
-      <div className="pf-strip" role="presentation" aria-hidden="true"></div>
+      <div className="pf-gap" aria-hidden="true"></div>
 
       <section id="links" className="pf-section pf-section--alt">
         <LinksView />
