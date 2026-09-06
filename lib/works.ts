@@ -91,7 +91,7 @@ const getGalleryImages = (id: string): string[] => {
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((file) => /\.(png|jpe?g|webp)$/i.test(file))
+    .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
     .sort()
     .map((file) => `/images/works/${id}/${file}`);
 };
