@@ -370,33 +370,48 @@ body {
 }
 .pf-proj-links {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.6rem;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
-.pf-proj-links a {
-  flex: 1;
-  text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
+.pf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
   border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.12s, opacity 0.12s;
 }
-.pf-proj-links .is-github {
+.pf-btn svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+.pf-btn:hover {
+  transform: translateY(-1px);
+}
+.pf-btn-ghost {
   background: var(--pf-bg);
-  color: var(--pf-ink-body);
+  color: var(--pf-ink);
   border: 1px solid var(--pf-rule);
 }
-.pf-proj-links .is-web {
+.pf-btn-ghost:hover {
+  border-color: var(--pf-ink-soft);
+}
+.pf-btn-primary {
   background: var(--pf-grad);
   color: #fff;
+  box-shadow: 0 4px 12px -4px color-mix(in srgb, var(--pf-life) 55%, transparent);
 }
-.pf-proj-links a:not(.is-disabled):hover {
-  opacity: 0.85;
+.pf-btn-primary:hover {
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--pf-life) 60%, transparent);
 }
-.pf-proj-links .is-disabled {
-  opacity: 0.4;
-  pointer-events: none;
+.pf-proj-closed {
+  font-size: 0.82rem;
+  color: var(--pf-ink-soft);
 }
 
 /* ---- screenshot gallery + lightbox ---- */
